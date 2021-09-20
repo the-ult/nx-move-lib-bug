@@ -27,6 +27,12 @@
     ]
   },
   "projects": {
+    "lib-a-moved": {
+      "tags": []
+    },
+    "lib-b": {
+      "tags": []
+    },
     "move-bug": {
       "tags": []
     },

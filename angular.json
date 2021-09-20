@@ -1,6 +1,88 @@
 {
   "version": 1,
   "projects": {
+    "lib-a-moved": {
+      "projectType": "library",
+      "root": "libs/lib-a-moved",
+      "sourceRoot": "libs/lib-a-moved/src",
+      "prefix": "ult",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/lib-a-moved"],
+          "options": {
+            "project": "libs/lib-a-moved/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/lib-a-moved/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/lib-a-moved/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/lib-a-moved"],
+          "options": {
+            "jestConfig": "libs/lib-a-moved/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/lib-a-moved/src/**/*.ts",
+              "libs/lib-a-moved/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "lib-b": {
+      "projectType": "library",
+      "root": "libs/lib-b",
+      "sourceRoot": "libs/lib-b/src",
+      "prefix": "my-space",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/lib-b"],
+          "options": {
+            "project": "libs/lib-b/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/lib-b/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/lib-b/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/lib-b"],
+          "options": {
+            "jestConfig": "libs/lib-b/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/lib-b/src/**/*.ts",
+              "libs/lib-b/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "move-bug": {
       "projectType": "application",
       "root": "apps/move-bug",

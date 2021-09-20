@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@my-lib/b": ["libs/lib-b/src/index.ts"],
+      "@my-lib/lib-a-moved": ["libs/lib-a-moved/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
